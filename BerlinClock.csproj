@@ -5,12 +5,13 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{0451204D-BF86-43E1-B560-FC9AC830B9A9}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>BerlinClock</RootNamespace>
     <AssemblyName>BerlinClock</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -35,7 +36,9 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Autofac, Version=4.9.4.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>packages\Autofac.4.9.4\lib\net45\Autofac.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -43,33 +46,43 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
-    <Reference Include="TechTalk.SpecFlow, Version=1.9.0.77, Culture=neutral, PublicKeyToken=0778194805d6db41, processorArchitecture=MSIL">
-      <HintPath>packages\SpecFlow.1.9.0\lib\net35\TechTalk.SpecFlow.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BDD\BerlinClockFeatureSteps.cs" />
+    <Compile Include="BerlinClockApp.cs" />
+    <Compile Include="ITimeEntityMapperResolver.cs" />
+    <Compile Include="TimeEntityMappers\BlinkingTimeEntityMapper.cs" />
+    <Compile Include="ContainerConfig.cs" />
+    <Compile Include="TimeEntityMappers\CustomTimeEntityMapperWithSpecialRecurringRedLamp.cs" />
+    <Compile Include="Helpers\IOutputFormatter.cs" />
+    <Compile Include="Helpers\ITimePartsValidator.cs" />
+    <Compile Include="TimeEntityMapperResolver.cs" />
+    <Compile Include="TimeEntityMappers\FourLampsTimeEntityMapper.cs" />
+    <Compile Include="Helpers\ILampsRowBuilder.cs" />
+    <Compile Include="Helpers\ITimeSpanDeserializer.cs" />
+    <Compile Include="Helpers\LampsRowBuilder.cs" />
+    <Compile Include="TimeEntityMappers\ITimeEntityMapper.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="BDD\BerlinClockFeatureSteps.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>BerlinClockFeatureSteps.feature</DependentUpon>
-    </Compile>
-    <Compile Include="Classes\ITimeConverter.cs" />
-    <Compile Include="Classes\TimeConverter.cs" />
+    <Compile Include="ITimeConverter.cs" />
+    <Compile Include="TimeConverter.cs" />
+    <Compile Include="Helpers\OutputFormatter.cs" />
+    <Compile Include="Helpers\TimePartsValidator.cs" />
+    <Compile Include="Helpers\TimeSpanDeserializer.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
-    <None Include="BDD\BerlinClockFeatureSteps.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>BerlinClockFeatureSteps.feature.cs</LastGenOutput>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="BerlinClockUtils\BerlinClockUtils.csproj">
+      <Project>{ba5b2d98-b25a-4f30-aa0c-4bfede175006}</Project>
+      <Name>BerlinClockUtils</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

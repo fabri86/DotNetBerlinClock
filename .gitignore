@@ -1,0 +1,47 @@
+# Visual Studio 2015/2017 cache/options directory
+.vs/
+
+# Build and packages
+bin/
+obj/
+packages
+
+
+# Files built by Visual Studio
+*.dll
+*.pdb
+
+#Other
+
+/build/
+*.suo
+*.user
+_ReSharper.*/
+*.sdf
+bin/
+obj/
+Debug/
+Release/
+*.opensdf
+*.tlog
+*.log
+*.cmd
+TestResult.xml
+*.VisualState.xml
+Version.cs
+Version.h
+Version.cpp
+
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+bld/
+[Bb]in
+[Oo]bj
+[Ll]og
+[Ll]ogs

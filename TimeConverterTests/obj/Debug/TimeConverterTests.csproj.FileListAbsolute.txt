@@ -1,0 +1,9 @@
+C:\Users\fiacovon\Documents\DotNetBerlinClock\TimeConverterTests\bin\Debug\TimeConverterTests.dll.config
+C:\Users\fiacovon\Documents\DotNetBerlinClock\TimeConverterTests\bin\Debug\TimeConverterTests.dll
+C:\Users\fiacovon\Documents\DotNetBerlinClock\TimeConverterTests\bin\Debug\TimeConverterTests.pdb
+C:\Users\fiacovon\Documents\DotNetBerlinClock\TimeConverterTests\bin\Debug\TechTalk.SpecFlow.dll
+C:\Users\fiacovon\Documents\DotNetBerlinClock\TimeConverterTests\obj\Debug\TimeConverterTests.csprojResolveAssemblyReference.cache
+C:\Users\fiacovon\Documents\DotNetBerlinClock\TimeConverterTests\obj\Debug\TimeConverterTests.dll
+C:\Users\fiacovon\Documents\DotNetBerlinClock\TimeConverterTests\obj\Debug\TimeConverterTests.pdb
+C:\Users\fiacovon\Documents\DotNetBerlinClock\TimeConverterTests\bin\Debug\BerlinClock.dll
+C:\Users\fiacovon\Documents\DotNetBerlinClock\TimeConverterTests\bin\Debug\BerlinClock.pdb
